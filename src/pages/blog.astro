@@ -1,5 +1,6 @@
 ---
-
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <html lang="en">
@@ -11,13 +12,18 @@
     <title>Astro | Blog</title>
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
+    <Navigation />
+
     <h1>My Astro Learning Blog</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, praesentium
       qui. Quia, voluptatum! Possimus dolore, voluptatibus molestias omnis
       voluptate esse enim beatae magni ut recusandae?
     </p>
+    <ul>
+        <li><a href="/posts/post-1">Post 1</a></li>
+        <li><a href="/posts/post-2">Post 2</a></li>
+        <li><a href="/posts/post-3">Post 3</a></li>
+    </ul>
   </body>
 </html>
