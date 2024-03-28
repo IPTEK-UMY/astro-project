@@ -1,14 +1,12 @@
 ---
-import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "About Me";
 
 const identity = {
-    firstName: "Sarah",
-    country: "Canada",
-    occupation: "Technical Writer",
-    hobbies: ['photography', 'birdwatching', 'baseball'],
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "Go", "React js"];
@@ -17,64 +15,63 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
-const skillColor = 'green';
-const fontWeight  = 'bold';
-const textCase = 'capitalize';
+const skillColor = "green";
+const fontWeight = "bold";
+const textCase = "capitalize";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro | {pageTitle}</title>
-    <style define:vars={{skillColor, fontWeight, textCase}}>
-        h1 {
-            color: purple;
-            font-size: 4rem;
-        }
+<style define:vars={{ skillColor, fontWeight, textCase }}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
 
-        .skill {
-            color: var(--skillColor);
-            font-weight: var(--fontWeight);
-            text-transform: var(--textCase);
-        }
-    </style>
-  </head>
-  <body>
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+</style>
+<BaseLayout pageTitle={pageTitle}>
+  <h1>About Page</h1>
+  <h2>This is my new Astro Site!</h2>
+  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum laudantium
+    nihil corporis molestias itaque quod, vel ea? Illo repellendus vero soluta
+    reiciendis hic! Beatae, veritatis doloremque! Excepturi facilis sunt culpa.
+  </p>
 
-    <Navigation />
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit,
+    mollitia?
+  </p>
 
-    <h1>About Page</h1>
-    <h2>This is my new Astro Site!</h2>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum laudantium
-      nihil corporis molestias itaque quod, vel ea? Illo repellendus vero soluta
-      reiciendis hic! Beatae, veritatis doloremque! Excepturi facilis sunt
-      culpa.
-    </p>
+  <h3>Here Facts about me</h3>
+  <ul>
+    <li>My name is {identity.firstName}</li>
+    <li>
+      I live in {identity.country} and I work as a {identity.occupation}.
+    </li>
+    {
+      identity.hobbies.length > 2 && (
+        <li>
+          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+        </li>
+      )
+    }
+  </ul>
+  <p>My skill are:</p>
+  <ul>
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
+  </ul>
 
-    <p>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit,
-      mollitia?
-    </p>
-
-    <h3>Here Facts about me</h3>
-    <ul>
-        <li>My name is {identity.firstName}</li>
-        <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-        {identity.hobbies.length > 2 &&
-            <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-        }
-    </ul>
-    <p>My skill are:</p>
-    <ul>
-        {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-
-    {happy && <p>I am happy to be learning Astro!</p>}
-    {finished && <p>I finished this tutorial!</p>}
-    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-  </body>
-</html>
+  {happy && <p>I am happy to be learning Astro!</p>}
+  {finished && <p>I finished this tutorial!</p>}
+  {
+    goal === 3 ? (
+      <p>My goal is to finish in 3 days.</p>
+    ) : (
+      <p>My goal is not 3 days.</p>
+    )
+  }
+</BaseLayout>

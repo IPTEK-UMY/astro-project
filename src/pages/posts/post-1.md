@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'My First Blog Post'
 pubDate: 2024-24-03
 description: 'Ini adalah project blog dengan teknologi Astro.'
@@ -8,10 +9,6 @@ image:
     alt: 'logo iptek'
 tags: ['astro', 'blogging', 'iptek']
 ---
-
-# First try Blog Technology using Astro
-
-Published on: 2024-24-03
 
 Welcome to our starting blog, this project demo from asro documentations
 
