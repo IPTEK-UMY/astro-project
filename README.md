@@ -8,44 +8,53 @@ git clone https://github.com/IPTEK-UMY/astro-project.git
 
 ## 🚀 Project Structure
 
-Struktur File dalam project ini (update setiap ada perubahan).
+Struktur File dalam project ini (Done).
 
 ```text
 /
 ├── public/
 │   └── favicon.svg
-|   |
+│   
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
-│   │   └── BlogPost.astro
-│   │   └── Footer.astro
-│   │   └── Hamburger.astro
-│   │   └── Header.astro
-│   │   └── Navigation.astro
+│   │   ├── Card.astro
+│   │   ├── BlogPost.astro
+│   │   ├── Footer.astro
+│   │   ├── Hamburger.astro
+│   │   ├── Header.astro
+│   │   ├── Navigation.astro
+│   │   ├── Greeting.jsx
+│   │   ├── ThemeIcon.astro
 │   │   └── Social.astro
+│   │
 │   ├── layouts/
-│   │   └── Layout.astro
-│   │   └── BaseLayout.astro
+│   │   ├── Layout.astro
+│   │   ├── BaseLayout.astro
 │   │   └── MarkdownPostLayout.astro
+│   │
 │   ├── pages/
-│   │   └── index.astro
-│   │   └── about.astro
-│   │   └── blog.astro
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   ├── rss.xml.js
+│   │   ├── blog.astro
 │   │   │
 │   │   ├── posts/
-│   │   │   └── post-1.md
-│   │   │   └── post-2.md
-│   │   │   └── post-3.md
-│   │   │   └── post-4.md
+│   │   │   ├── post-1.md
+│   │   │   ├── post-2.md
+│   │   │   ├── post-3.md
+│   │   │   ├── post-4.md
 │   │   │   └── post-5.md
+│   │   │
 │   │   └── tags/
-│   │       └── [tag].astro
+│   │       ├── [tag].astro
 │   │       └── index.astro
+│   │
 │   ├── scripts/
 │   │   └── menu.js
+│   │
 │   └── styles/
 │       └── global.css
+│
 └── package.json
 ```
 
